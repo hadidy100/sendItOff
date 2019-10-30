@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import RatingSlider from "./ratingSlider";
+//import welcome from "../images/welcome.jpg";
 
-class RateSomeOne extends Component {
+class UserSignIn extends Component {
+  state = {};
   render() {
     return (
       <div>
@@ -24,6 +25,16 @@ class RateSomeOne extends Component {
                 className="form-control"
                 id="inputLastName"
                 placeholder="Smith"
+              />
+            </div>
+
+            <div className="form-group col-md-4">
+              <label htmlFor="SSN">Socail Security / Fed TaxID</label>
+              <input
+                type="SSN"
+                className="form-control"
+                id="SSN"
+                placeholder="123-45-6789 "
               />
             </div>
 
@@ -58,16 +69,6 @@ class RateSomeOne extends Component {
             </div>
 
             <div className="form-group col-md-4">
-              <label htmlFor="AccountNumber">Account Number</label>
-              <input
-                type="text"
-                className="form-control"
-                id="AccountNumber"
-                placeholder="Acct# "
-              />
-            </div>
-
-            <div className="form-group col-md-4">
               <label htmlFor="email">Email Address </label>
               <input
                 type="text"
@@ -76,22 +77,32 @@ class RateSomeOne extends Component {
                 placeholder="StevenSmith@gmail.com "
               />
             </div>
-            <button type="button" className="btn btn-primary btn-lg btn-block">
-              Search
-            </button>
-            <span>
-              <br />
-              <br />
-              <br />
-            </span>
-          </div>
 
+            <div className="form-group col-md-4">
+              <label htmlFor="password1">password </label>
+              <input
+                type="password"
+                className="form-control"
+                id="password1"
+                placeholder="XXXXXXXX "
+              />
+            </div>
+
+            <div className="form-group col-md-4">
+              <label htmlFor="password2">password </label>
+              <input
+                type="password"
+                className="form-control"
+                id="password2"
+                placeholder="XXXXXXXX "
+              />
+            </div>
+          </div>
           <nav aria-label="breadcrumb">
-            <ol
-              className="breadcrumb"
-              style={{ backgroundColor: "white", flex: 1, padding: "60" }}
-            >
-              <li className="breadcrumb-item active" aria-current="page"></li>
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item active" aria-current="page">
+                Physical Address
+              </li>
             </ol>
           </nav>
           <div className="form-group">
@@ -129,18 +140,68 @@ class RateSomeOne extends Component {
               <input type="text" className="form-control" id="inputZip" />
             </div>
           </div>
-
-          <nav aria-label="breadcrumb danger ">
+          <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
-              <li className="list-group-item list-group-item-danger">
-                Slide below to submit your rating
+              <li className="breadcrumb-item active" aria-current="page">
+                Mailing Address
               </li>
             </ol>
           </nav>
-          <RatingSlider />
+          <div className="form-group">
+            <label htmlFor="inputDestinationAddress">Street Address</label>
+            <input
+              type="text"
+              className="form-control"
+              id="inputDestinationAddress"
+              placeholder="1234 Main St"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="inputAddress2d">Address 2</label>
+            <input
+              type="text"
+              className="form-control"
+              id="inputAddress2d"
+              placeholder="Apartment, studio, or floor"
+            />
+          </div>
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <label htmlFor="inputCityd">City</label>
+              <input type="text" className="form-control" id="inputCityd" />
+            </div>
+            <div className="form-group col-md-4">
+              <label htmlFor="inputStated">State</label>
+              <select className="form-control">
+                <option>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div className="form-group col-md-2">
+              <label htmlFor="inputZipd">Zip</label>
+              <input type="text" className="form-control" id="inputZipd" />
+            </div>
+          </div>
+          <div className="form-group">
+            <label htmlFor="comments">Comments</label>
+            <textarea
+              className="form-control"
+              rows="5"
+              id="comments"
+              placeholder="Please enter your comments or special instructions here..."
+            ></textarea>
+          </div>{" "}
+          <button
+            type="submit"
+            className="btn btn-success"
+            onClick={this.handlePostIt}
+          >
+            Sign Up
+          </button>
         </form>
       </div>
     );
   }
 }
-export default RateSomeOne;
+
+export default UserSignIn;
